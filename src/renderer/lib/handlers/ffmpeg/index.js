@@ -9,8 +9,7 @@ exports.createVideoFile = async function (filePath) {
   await ffmpeg
     .input(readableVideoBuffer)
     .output(filePath)
-    .withNoAudio()
     .on('start', start)
     .on('end', end)
-    .run()    
+    .run()
 }

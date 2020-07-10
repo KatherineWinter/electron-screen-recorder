@@ -13,3 +13,7 @@ ipcRenderer.on('select-output', (event, source) =>
 exports.invokeContextMenu = (data, type) => {
   ipcRenderer.invoke('context-menu', JSON.stringify({ data, type }))
 }
+
+exports.invokeStart = () => {
+  ipcRenderer.invoke('start')
+}

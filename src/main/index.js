@@ -1,5 +1,6 @@
 const { app, BrowserWindow, Menu } = require('electron')
 const path = require('path')
+const { setParent } = require('./windows')
 
 const isDev = process.env.MODE === 'development'
 
@@ -19,6 +20,14 @@ const createWindow = () => {
       nodeIntegration: true
     }
   })
+
+  setParent(mainWindow)
+//   byte[] bytes = new byte[8];
+// for (int i = 0; i < data.Length; i++) {
+//   object item = data[i];
+//   bytes[i] = (byte)(int)item;
+// }
+// return BitConverter.ToUInt64(bytes, 0);
 
   mainWindow.loadFile(
     path.resolve(

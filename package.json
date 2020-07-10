@@ -5,7 +5,7 @@
   "description": "A Desktop screen recorder app built using web technologies",
   "main": "src/main/index.js",
   "scripts": {
-    "start": "MODE=development electron-forge start",
+    "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -70,7 +70,13 @@
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.0.20",
     "electron-squirrel-startup": "^1.0.0",
-    "fluent-ffmpeg": "^2.1.2"
+    "ffi-napi": "^2.5.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "puppeteer": "^3.0.4",
+    "ref-napi": "^2.0.0",
+    "say": "^0.16.0",
+    "win32-api": "^9.3.0",
+    "win32-def": "^9.4.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "6.0.0-beta.50",

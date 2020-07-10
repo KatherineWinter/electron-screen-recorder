@@ -1,3 +1,6 @@
+const { ipcRenderer } = require('electron')
+const { invokeStart } = require('../ipc')
+
 document
   .getElementById('startBtn')
   .addEventListener('click', ({ target }) => {
@@ -9,7 +12,7 @@ document
     saveBtn.setAttribute('disabled', 'disabled')
     videoSelectBtn.setAttribute('disabled', 'disabled')
     target.setAttribute('disabled', 'disabled')
-    
+      
     window.mediaRecorder.start()
   
     target
@@ -17,4 +20,5 @@ document
       .add('is-danger')
     
     target.textContent = 'Recording'
+    invokeStart()
   })

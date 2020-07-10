@@ -1,4 +1,5 @@
-const { ipcMain, Menu } = require('electron')
+const { ipcMain, BrowserWindow, Menu } = require('electron')
+const { puppeteerScript } = require('../../../puppeteerScript')
 
 ipcMain.handle('context-menu', async (event, sources) => {
   const source = JSON.parse(sources)
@@ -14,4 +15,9 @@ ipcMain.handle('context-menu', async (event, sources) => {
       }))
   )
   contextMenu.popup()
+})
+
+ipcMain.handle('start', async () => {
+  BrowserWindow.getFocusedWindow().minimize()
+  await puppeteerScript()
 })
